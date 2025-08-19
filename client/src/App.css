@@ -28,7 +28,7 @@
 }
 .user-form button[type="button"] {
   background: #aaa;
-}
+  }
 .user-form button:hover {
   background: #1565c0;
 }
@@ -58,7 +58,7 @@
 }
 .user-table button:hover {
   opacity: 0.85;
-}
+  }
 .error {
   color: #d32f2f;
   margin-bottom: 1rem;
