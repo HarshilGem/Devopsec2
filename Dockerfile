@@ -14,7 +14,7 @@ COPY . .
 # 5. Remove client folder (not needed for backend deployment
 
 # 6. Expose the app port (adjust if needed)
-EXPOSE 3000
+EXPOSE 4000
 
 # 7. Command to run your app
 CMD ["node", "server.js"]
