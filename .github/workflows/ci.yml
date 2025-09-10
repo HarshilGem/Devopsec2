@@ -24,3 +24,4 @@ jobs:
 
       - name: Run tests
         run: npm test
+# Remove or comment out above lines if you don't want to run tests
