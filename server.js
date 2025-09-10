@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 const userRouter = require('./Routes/user');
 app.use('/api/users', userRouter);
-var x = 5
+// var x = 5
 
 const PORT = 4000;
 app.listen(PORT, () => {
