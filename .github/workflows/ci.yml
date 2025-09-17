@@ -34,13 +34,17 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Normalize repository owner to lowercase
+        id: repo_owner
+        run: echo "owner=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner,, }}/nodejs-cilab:latest
-            ghcr.io/${{ github.repository_owner,, }}/nodejs-cilab:${{ github.sha }}
+            ghcr.io/${{ steps.repo_owner.outputs.owner }}/nodejs-cilab:latest
+            ghcr.io/${{ steps.repo_owner.outputs.owner }}/nodejs-cilab:${{ github.sha }}
           labels: |
             org.opencontainers.image.source=${{ github.repository }}
