@@ -6,6 +6,7 @@
     "start": "node server.js",
     "test": "echo \"No tests specified\" && exit 0",
     "dev": "nodemon server.js",
+    "lint": "eslint .",
     "client": "cd client && npm start",
     "dev:full": "concurrently \"npm run dev\" \"npm run client\""
   },
